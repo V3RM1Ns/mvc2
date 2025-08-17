@@ -3,6 +3,7 @@ using Eterna.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eterna.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250817191141_imgs")]
+    partial class imgs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,23 +39,6 @@ namespace Eterna.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Web Design"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Mobile App"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Branding"
-                        });
                 });
 
             modelBuilder.Entity("Eterna.Models.Portfolio", b =>
@@ -83,32 +69,6 @@ namespace Eterna.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Portfolios");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            Description = "A modern and responsive website design for a tech company.",
-                            ImageUrl = "portfolio-1.webp",
-                            Title = "Modern Website Design"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            Description = "A secure and user-friendly mobile banking application.",
-                            ImageUrl = "portfolio-2.webp",
-                            Title = "Mobile Banking App"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 3,
-                            Description = "Complete brand identity design for a startup company.",
-                            ImageUrl = "portfolio-3.webp",
-                            Title = "Brand Identity Design"
-                        });
                 });
 
             modelBuilder.Entity("Eterna.Models.PortfolioImg", b =>
@@ -131,50 +91,6 @@ namespace Eterna.Migrations
                     b.HasIndex("PortfolioId");
 
                     b.ToTable("PortfolioImgs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ImageUrl = "portfolio-1.webp",
-                            PortfolioId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ImageUrl = "portfolio-4.webp",
-                            PortfolioId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ImageUrl = "portfolio-7.webp",
-                            PortfolioId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ImageUrl = "portfolio-2.webp",
-                            PortfolioId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ImageUrl = "portfolio-5.webp",
-                            PortfolioId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ImageUrl = "portfolio-3.webp",
-                            PortfolioId = 3
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ImageUrl = "portfolio-6.webp",
-                            PortfolioId = 3
-                        });
                 });
 
             modelBuilder.Entity("Eterna.Models.Slider", b =>
@@ -208,35 +124,6 @@ namespace Eterna.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sliders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ButtonText = "Get Started",
-                            ButtonUrl = "#about",
-                            Description = "We are team of talented designers making websites with Bootstrap",
-                            ImageUrl = "hero-carousel-1.webp",
-                            Title = "Welcome to <span>Eterna</span>"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ButtonText = "Get Started",
-                            ButtonUrl = "#about",
-                            Description = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus",
-                            ImageUrl = "hero-carousel-2.webp",
-                            Title = "At vero eos et <span>accusamus</span>"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ButtonText = "Get Started",
-                            ButtonUrl = "#about",
-                            Description = "Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit",
-                            ImageUrl = "hero-carousel-3.webp",
-                            Title = "Temporibus autem <span>quibusdam</span>"
-                        });
                 });
 
             modelBuilder.Entity("Eterna.Models.Portfolio", b =>

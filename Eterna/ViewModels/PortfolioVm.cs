@@ -1,10 +1,9 @@
 using Eterna.Models;
 
-namespace Eterna.ViewModels;
-
-public class PortfolioVm
+namespace Eterna.ViewModels
 {
-    public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
-    public List<Category> Categories { get; set; } = new List<Category>();
-    
+    public class PortfolioVm
+    {
+        public Portfolio Portfolio { get; set; } = null!;
+    }
 }

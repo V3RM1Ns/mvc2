@@ -1,8 +1,10 @@
-namespace Eterna.Models;
-
-public class Category
+namespace Eterna.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
+    public class Category
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = null!;
+        public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
+    }
 }
+

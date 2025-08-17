@@ -3,6 +3,7 @@ using Eterna.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eterna.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250817194151_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,35 +211,6 @@ namespace Eterna.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sliders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ButtonText = "Get Started",
-                            ButtonUrl = "#about",
-                            Description = "We are team of talented designers making websites with Bootstrap",
-                            ImageUrl = "hero-carousel-1.webp",
-                            Title = "Welcome to <span>Eterna</span>"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ButtonText = "Get Started",
-                            ButtonUrl = "#about",
-                            Description = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus",
-                            ImageUrl = "hero-carousel-2.webp",
-                            Title = "At vero eos et <span>accusamus</span>"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ButtonText = "Get Started",
-                            ButtonUrl = "#about",
-                            Description = "Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit",
-                            ImageUrl = "hero-carousel-3.webp",
-                            Title = "Temporibus autem <span>quibusdam</span>"
-                        });
                 });
 
             modelBuilder.Entity("Eterna.Models.Portfolio", b =>
