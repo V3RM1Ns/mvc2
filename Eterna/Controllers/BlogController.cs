@@ -1,20 +1,28 @@
 using Eterna.Data;
 using Eterna.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Eterna.Controllers
 {
     public class BlogController : Controller
     {
-        public IActionResult Index(AppDbContext context)
+        private readonly AppDbContext _context;
+
+        public BlogController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
         {
             var viewModel = new BlogVm()
             { 
-                Blogs = context.Blogs.ToList(),
-               Categories = context.Categories.ToList(),
-               RecentBlogs = context.Blogs
+                Blogs = await _context.Blogs.ToListAsync(),
+                Categories = await _context.Categories.ToListAsync(),
+                RecentBlogs = await _context.Blogs
                    .Take(3)
-                    .ToList()
+                   .ToListAsync()
             };
             return View(viewModel);
         }

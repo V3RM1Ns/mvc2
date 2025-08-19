@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Eterna.Models;
+
 using Eterna.Data;
 using Eterna.ViewModels;
-using System.Diagnostics;
 
 namespace Eterna.Controllers
 {
