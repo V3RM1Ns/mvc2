@@ -6,5 +6,6 @@ namespace Eterna.ViewModels
     {
         public List<Slider> Sliders { get; set; } = new List<Slider>();
         public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
+        public List<Client> Clients { get; set; } = new List<Client>();
     }
 }

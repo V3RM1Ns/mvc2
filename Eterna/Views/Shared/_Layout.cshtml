@@ -72,7 +72,7 @@
             <li><a asp-action="Index" asp-controller="Portfolio" class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Portfolio" ? "active" : "")">Portfolio</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#blog">Blog</a></li>
+            <li><a asp-action="Index" asp-controller="Blog" class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Blog" ? "active" : "")">Blog</a></li>
             <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="#">Dropdown 1</a></li>
